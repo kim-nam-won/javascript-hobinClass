@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input-tag</title>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <!-- 인풋태그 타입속성에따라 입력받는 데이터의 형식이 달라집니다. 
+     placeholder 입력전 미리보여지는 텍스트 
+     value로 초기값 설정가능능-->
+    <label for="userName">이름:</label>
+    <input
+      type="text"
+      id="userName"
+      placeholder="이름을 입력하세요"
+      value="홍길동"
+    />
+    <label for="password">비밀번호:</label>
+    <input type="password" id="password" placeholder="비밀번호 입력하세요" />
+    <button>로그인</button>
+  </body>
+</html>
