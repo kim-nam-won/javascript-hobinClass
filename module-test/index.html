@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module Test</title>
+    <script type="Module" src="src/index.mjs" defer></script>
+    <!-- 여기를 삭제하더라도 오류없이 됨 이유는 test.mjs 파일은 index.mjs파일에서 import로 가져와 로드를 했기때문문-->
+  </head>
+  <body>
+    <h1>Module Test</h1>
+  </body>
+</html>
+<!-- 모듈로 사용방법 스크립트 태그에 type ="module" 넣어주면 된다. 
+ 그리고 확장자명을 일반적인 파일이 아니라 모듈임을 명시해주기위해 JS파일명 뒤에 .mjs를 붙여주는것이 일반적적.
+  -->
