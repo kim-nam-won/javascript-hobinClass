@@ -23,7 +23,7 @@ export default function TabBar({ $app, initialState, onClick }) {
     $tabBar.forEach((elm) => {
       elm.addEventListener("click", () => {
         // 각 div 요소에 클릭 이벤트 리스너를 추가합니다.
-        onClick(elm.id); // 클릭한 div 요소의 id를 onClick 함수에 전달합니다.
+        this.onClick(elm.id); // 클릭한 div 요소의 id를 onClick 함수에 전달합니다.
       });
     });
   };

@@ -1,6 +1,6 @@
-import TabBar from "./components/TabBar"; // TabBar.js 파일을 불러옵니다.
-import Content from "./components/Content"; // Content.js 파일을 불러옵니다.
-import { request } from "./components/api"; // api.js 파일을 불러옵니다.
+import TabBar from "./components/TabBar.js"; // TabBar.js 파일을 불러옵니다.
+import Content from "./components/Content.js"; // Content.js 파일을 불러옵니다.
+import { request } from "./components/api.js"; // api.js 파일을 불러옵니다.
 
 export default function App($app) {
   // App 생성자 함수를 생성합니다.
@@ -14,18 +14,21 @@ export default function App($app) {
   const tabbar = new TabBar({
     $app, // App 컴포넌트가 렌더링될 DOM 요소를 전달합니다.
     initialState: "", // 초기값 설정
-    oncClick: async (name) => {
+    onClick: async (name) => {
       // 클릭 이벤트 설정 변경값을 currentTab에 저장
-      this.setTate({
+      this.setState({
         // 클릭한 탭의 데이터를 state에 저장합니다.
-        ...this.setState, // 기존 state를 복사합니다. 스프레드 연산자
+        ...this.State, // 기존 state를 복사합니다. 스프레드 연산자
         currentTab: name, // 클릭한 탭의 이름을 currentTab에 저장합니다.
-        photos: await request(name), // 클릭한 탭의 새로운 사진을 request 이름으로 함수를 불러와 저장합니다.
+        photos: await request(name === "all" ? "" : name), // 클릭한 탭의 새로운 사진을 request 이름으로 함수를 불러와 저장합니다.
         // request 함수는 비동기 함수로 async await를 사용하여 데이터를 받아옵니다.
       });
     },
   });
-  const content = new Content();
+  const content = new Content({
+    $app, // App 컴포넌트가 렌더링될 DOM 요소를 전달합니다.
+    initialState: [], // 초기값 설정
+  });
 
   this.setState = (newState) => {
     // 업데이트 값을 newState로 받습니다.
